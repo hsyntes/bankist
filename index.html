@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>BankApp</title>
+  </head>
+  <body class="py-4">
+    <div class="container">
+      <nav class="navbar navbar-expand">
+        <a href="#" class="navbar-brand fs-1 text-primary align-self-start">
+          <span>
+            <i class="fa-solid fa-building-columns"></i>
+          </span>
+          <span>BankApp</span>
+        </a>
+        <form action="" class="ms-auto">
+          <div class="input-group">
+            <input
+              type="text"
+              name="input-login-username"
+              id="input-login-username"
+              class="form-control py-3"
+              placeholder="Username"
+              required
+            />
+            <input
+              type="password"
+              name="input-login-password"
+              id="input-login-password"
+              class="form-control"
+              placeholder="Password"
+              maxlength="4"
+              required
+            />
+            <button type="submit" class="btn btn-primary px-3" id="btn-login">
+              <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </div>
+          <p class="mb-0 fs-6">
+            <span class="text-muted">Don't you have account?</span>
+            <a
+              href="#"
+              class="text-primary fs-6"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-register"
+            >
+              Register Now.
+            </a>
+          </p>
+        </form>
+      </nav>
+      <main>
+        <h4 class="text-dark mb-4" id="label-welcome"></h4>
+        <div class="mb-4">
+          <div class="d-flex align-items-start">
+            <h3 class="text-dark mb-0">Current Balance</h3>
+            <h3 class="mb-0 ms-auto">
+              <span id="label-balance"></span>
+            </h3>
+          </div>
+          <p class="text-muted fs-6 mb-0 pb-0" id="label-date"></p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <ul class="list-group bg-light border shadow mb-4 mb-lg-0"></ul>
+            <div class="d-flex align-items-center p-lg-3 mb-5 mb-lg-4">
+              <div class="text-muted">
+                <span class="fs-6">IN:</span>
+                <span class="text-success fs-5" id="income"></span>
+              </div>
+              <div class="text-muted ms-4">
+                <span class="fs-6">OUT: </span>
+                <span class="text-danger fs-5" id="outcome"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 ms-auto">
+            <div class="card shadow border bg-light mb-4 p-2">
+              <div class="card-header border-0 pb-0">
+                <h6 class="card-title text-muted mb-0 my-2">Transfer Money</h6>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      name="input-transfer-username"
+                      id="input-transfer-username"
+                      class="form-control py-2"
+                      placeholder="Username"
+                      required
+                    />
+                    <input
+                      type="number"
+                      name="input-transfer-amount"
+                      id="input-transfer-amount"
+                      class="form-control"
+                      placeholder="Amount"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      class="btn btn-secondary border"
+                      id="btn-transfer"
+                    >
+                      <i class="fa fa-angle-right"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card shadow border bg-light mb-4 p-2">
+              <div class="card-header border-0 pb-0">
+                <h6 class="card-title text-muted mb-0 my-2">Request Loan</h6>
+              </div>
+              <div class="card-body">
+                <form class="w-50">
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      name="input-loan-amount"
+                      id="input-loan-amount"
+                      class="form-control"
+                      placeholder="Amount"
+                      step="100"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      class="btn btn-success border"
+                      id="btn-loan"
+                    >
+                      <i class="fa fa-angle-right"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card shadow border bg-light p-2">
+              <div class="card-header border-0 pb-0">
+                <h6 class="card-title text-muted mb-0 my-2">Delete Account</h6>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="input-group">
+                    <input
+                      type="password"
+                      name="input-delete-password"
+                      id="input-delete-password"
+                      class="form-control py-2"
+                      placeholder="Confirm password"
+                      maxlength="4"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      class="btn btn-danger border"
+                      id="btn-delete"
+                    >
+                      <i class="fa fa-angle-right"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="modal fade" id="modal-register">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen-lg-down">
+        <div class="modal-content shadow border bg-light">
+          <div class="modal-header border-0 pb-0">
+            <h6 class="modal-title text-muted mb-0 my-2">Create New Account</h6>
+            <button
+              type="button"
+              class="btn text-muted"
+              data-bs-dismiss="modal"
+            >
+              <i class="fa fa-times fa-lg"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  name="input-register-name"
+                  id="input-register-name"
+                  class="form-control py-3"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  name="input-register-lastname"
+                  id="input-register-lastname"
+                  class="form-control py-3"
+                  placeholder="Lastname"
+                  required
+                />
+              </div>
+              <div class="from-group mb-3">
+                <div class="d-flex align-items-center">
+                  <input
+                    type="password"
+                    name="input-register-password"
+                    id="input-register-password"
+                    class="form-control py-3"
+                    placeholder="Password"
+                    maxlength="4"
+                    required
+                  />
+                  <input
+                    type="password"
+                    name="input-register-confirm-password"
+                    id="input-register-confirm-password"
+                    class="form-control py-3"
+                    placeholder="Confirm password"
+                    maxlength="4"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="input-group">
+                <button
+                  type="submit"
+                  class="btn btn-primary px-3 py-2"
+                  id="btn-register"
+                >
+                  Register Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal-warning">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow border bg-light">
+          <div class="modal-header border-0 pb-0">
+            <h6 class="modal-title text-warning mb-0 my-2">
+              <span>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </span>
+              <span>WARNING</span>
+            </h6>
+          </div>
+          <div class="modal-body">
+            <p
+              class="modal-text text-muted fs-5 mb-0"
+              id="modal-text-warning"
+            ></p>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal-confirm">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow border bg-light">
+          <div class="modal-header border-0 pb-0">
+            <h6 class="modal-title text-danger mb-0 my-2">
+              <span>
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+              </span>
+              <span id="modal-title-confirm"></span>
+            </h6>
+          </div>
+          <div class="modal-body">
+            <p
+              class="modal-text text-muted fs-5 mb-0"
+              id="modal-text-confirm"
+            ></p>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button
+              type="button"
+              class="btn btn-success"
+              id="btn-confirm-no"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="btn-confirm-yes"
+              data-bs-dismiss="modal"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/42bec294e9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

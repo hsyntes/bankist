@@ -1,0 +1,261 @@
+.fs-6 {
+  font-size: 12px !important;
+}
+
+.fs-5 {
+  font-size: 14px !important;
+}
+
+.fs-4 {
+  font-size: 16px !important;
+}
+
+.fs-2 {
+  font-size: 24px !important;
+}
+
+.fs-1 {
+  font-size: 32px !important;
+}
+
+a,
+.btn {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.btn {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+button.text-muted:hover {
+  color: #1e2022 !important;
+}
+
+.btn-primary {
+  background: #ff165d !important;
+  color: #fff !important;
+}
+.btn-primary:hover {
+  background: #fc004d !important;
+}
+.btn-primary:active {
+  background: #e20045 !important;
+}
+
+.btn-secondary {
+  background: #ff9a00 !important;
+  color: #fff !important;
+}
+.btn-secondary:hover {
+  background: #e68b00 !important;
+}
+.btn-secondary:active {
+  background: #cc7b00 !important;
+}
+
+.btn-dark {
+  background: #1e2022 !important;
+  color: #fff !important;
+}
+.btn-dark:hover {
+  background: #121314 !important;
+}
+.btn-dark:active {
+  background: #060707 !important;
+}
+
+.btn-light {
+  background: #fff !important;
+  color: #1e2022 !important;
+}
+.btn-light:hover {
+  background: #f2f2f2 !important;
+}
+.btn-light:active {
+  background: #e6e6e6 !important;
+}
+
+.btn-danger {
+  background: red !important;
+  color: #fff !important;
+}
+.btn-danger:hover {
+  background: #e60000 !important;
+}
+.btn-danger:active {
+  background: #cc0000 !important;
+}
+
+.btn-success {
+  background: green !important;
+  color: #fff !important;
+}
+.btn-success:hover {
+  background: #006700 !important;
+}
+.btn-success:active {
+  background: #004d00 !important;
+}
+
+.text-primary {
+  color: #ff165d !important;
+}
+
+.text-secondary {
+  color: #ff9a00 !important;
+}
+
+.text-light {
+  color: #fff !important;
+}
+
+.text-warning {
+  color: orange !important;
+}
+
+.text-muted {
+  color: rgba(30, 32, 34, 0.8) !important;
+}
+
+.text-success {
+  color: green !important;
+}
+
+.text-danger {
+  color: red !important;
+}
+
+.bg-primary {
+  background: #ff165d !important;
+}
+
+.bg-secondary {
+  background: #ff9a00 !important;
+}
+
+.bg-light {
+  background: #fff !important;
+}
+
+.bg-danger {
+  background: red !important;
+}
+
+.bg-success {
+  background: green !important;
+}
+
+.shadow {
+  box-shadow: 0 0 10px rgba(30, 32, 34, 0.2) !important;
+}
+
+.border {
+  border: 1px solid rgba(30, 32, 34, 0.2) !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(30, 32, 34, 0.2) !important;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-semibold {
+  font-weight: 500 !important;
+}
+
+input {
+  font-size: 14px !important;
+  color: #1e2022 !important;
+  box-shadow: none !important;
+}
+input:focus {
+  border: 1px solid #ff165d !important;
+  background: rgba(255, 22, 92, 0.15) !important;
+  box-shadow: 0 0 10px rgba(30, 32, 34, 0.2) !important;
+}
+input::-moz-placeholder {
+  color: rgba(30, 32, 34, 0.8) !important;
+}
+input:-ms-input-placeholder {
+  color: rgba(30, 32, 34, 0.8) !important;
+}
+input::placeholder {
+  color: rgba(30, 32, 34, 0.8) !important;
+}
+
+input#input-transfer-username:focus,
+input#input-transfer-amount:focus {
+  border: 1px solid #ff9a00 !important;
+}
+
+input#input-loan-amount:focus {
+  border: 1px solid green !important;
+}
+
+input#input-delete-username:focus,
+input#input-delete-password:focus {
+  border: 1px solid red !important;
+}
+
+a.navbar-brand {
+  font-family: "Kaushan Script", cursive;
+  text-shadow: 0 0 10px rgba(30, 32, 34, 0.2) !important;
+}
+
+.active {
+  background: rgba(255, 22, 92, 0.15) !important;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff165d !important;
+  border-radius: 5px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #1e2022 !important;
+}
+
+main {
+  opacity: 0;
+}
+main .list-group {
+  max-height: 70vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+main .list-group:hover {
+  box-shadow: 0 0 30px rgba(30, 32, 34, 0.2) !important;
+  transition: 0.5s all ease-in-out;
+}
+main .list-group .list-group-item {
+  cursor: pointer;
+}
+main .list-group .list-group-item:hover {
+  background: rgba(255, 22, 92, 0.15) !important;
+  transition: 0.5s all ease-in-out;
+}
+main .list-group .list-group-item:hover .movement-amount {
+  color: #1e2022 !important;
+  transition: 0.5s all ease-in-out;
+}
+main .card:hover {
+  box-shadow: 0 0 30px rgba(30, 32, 34, 0.2) !important;
+  transition: 0.5s all ease-in-out;
+}
+main .card:hover .card-title {
+  color: #1e2022 !important;
+  transition: 0.5s all ease-in-out;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,285 @@
+$color-primary: #ff165d;
+$color-secondary: #ff9a00;
+$color-dark: #1e2022;
+$color-light: #fff;
+$color-danger: red;
+$color-success: green;
+$color-warning: orange;
+$color-muted: rgba(30, 32, 34, 0.8);
+$item-active: rgba(255, 22, 92, 0.15);
+
+@mixin color($color) {
+  color: $color !important;
+}
+
+@mixin background($color) {
+  background: $color !important;
+}
+
+@mixin backgroundDarken($color, $amount) {
+  background: darken($color: $color, $amount: $amount) !important;
+}
+
+@mixin btn($background, $color) {
+  @include background($background);
+  @include color($color);
+  &:hover {
+    @include backgroundDarken($background, 5);
+  }
+  &:active {
+    @include backgroundDarken($background, 10);
+  }
+}
+
+@mixin fontSize($size) {
+  font-size: $size !important;
+}
+
+@mixin boxShadow($size) {
+  box-shadow: 0 0 $size transparentize($color: $color-dark, $amount: 0.8) !important;
+}
+
+@mixin textShadow($size) {
+  text-shadow: 0 0 $size transparentize($color: $color-dark, $amount: 0.8) !important;
+}
+
+@mixin border($color) {
+  border: 1px solid $color !important;
+}
+
+@mixin borderTransparentize() {
+  border: 1px solid transparentize($color: $color-dark, $amount: 0.8) !important;
+}
+
+@mixin fontWeight($weight) {
+  font-weight: $weight !important;
+}
+
+@mixin transition() {
+  transition: 0.5s all ease-in-out;
+}
+
+.fs-6 {
+  @include fontSize(12px);
+}
+
+.fs-5 {
+  @include fontSize(14px);
+}
+
+.fs-4 {
+  @include fontSize(16px);
+}
+
+.fs-2 {
+  @include fontSize(24px);
+}
+
+.fs-1 {
+  @include fontSize(32px);
+}
+
+a,
+.btn {
+  @include fontSize(14px);
+  @include fontWeight(500);
+}
+
+.btn {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+button.text-muted {
+  &:hover {
+    @include color($color-dark);
+  }
+}
+
+.btn-primary {
+  @include btn($color-primary, $color-light);
+}
+
+.btn-secondary {
+  @include btn($color-secondary, $color-light);
+}
+
+.btn-dark {
+  @include btn($color-dark, $color-light);
+}
+
+.btn-light {
+  @include btn($color-light, $color-dark);
+}
+
+.btn-danger {
+  @include btn($color-danger, $color-light);
+}
+
+.btn-success {
+  @include btn($color-success, $color-light);
+}
+
+.text-primary {
+  @include color($color-primary);
+}
+
+.text-secondary {
+  @include color($color-secondary);
+}
+
+.text-light {
+  @include color($color-light);
+}
+
+.text-warning {
+  @include color($color-warning);
+}
+
+.text-muted {
+  @include color($color-muted);
+}
+
+.text-success {
+  @include color($color-success);
+}
+
+.text-danger {
+  @include color($color-danger);
+}
+
+.bg-primary {
+  @include background($color-primary);
+}
+
+.bg-secondary {
+  @include background($color-secondary);
+}
+
+.bg-light {
+  @include background($color-light);
+}
+
+.bg-danger {
+  @include background($color-danger);
+}
+
+.bg-success {
+  @include background($color-success);
+}
+
+.shadow {
+  @include boxShadow(10px);
+}
+
+.border {
+  @include borderTransparentize();
+}
+
+.border-bottom {
+  border-bottom: 1px solid transparentize($color: $color-dark, $amount: 0.8) !important;
+}
+
+.fw-bold {
+  @include fontWeight(700);
+}
+
+.fw-semibold {
+  @include fontWeight(500);
+}
+
+input {
+  @include fontSize(14px);
+  @include color($color-dark);
+  box-shadow: none !important;
+  &:focus {
+    @include border($color-primary);
+    @include background($item-active);
+    @include boxShadow(10px);
+  }
+  &::placeholder {
+    @include color($color-muted);
+  }
+}
+
+input#input-transfer-username,
+input#input-transfer-amount {
+  &:focus {
+    @include border($color-secondary);
+  }
+}
+
+input#input-loan-amount {
+  &:focus {
+    @include border($color-success);
+  }
+}
+
+input#input-delete-username,
+input#input-delete-password {
+  &:focus {
+    @include border($color-danger);
+  }
+}
+
+a.navbar-brand {
+  font-family: "Kaushan Script", cursive;
+  @include textShadow(10px);
+}
+
+.active {
+  @include background($item-active);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  // @include background($color-dark);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  @include background($color-primary);
+  border-radius: 5px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  @include color($color-dark);
+}
+
+main {
+  opacity: 0;
+  .list-group {
+    max-height: 70vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    &:hover {
+      @include boxShadow(30px);
+      @include transition();
+    }
+    .list-group-item {
+      cursor: pointer;
+      &:hover {
+        @include background($item-active);
+        @include transition();
+        .movement-amount {
+          @include color($color-dark);
+          @include transition();
+        }
+      }
+    }
+  }
+  .card {
+    &:hover {
+      @include boxShadow(30px);
+      @include transition();
+      .card-title {
+        @include color($color-dark);
+        @include transition();
+      }
+    }
+  }
+}
